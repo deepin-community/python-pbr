@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+pkgos-dh_auto_test --no-py2 'pbr\.tests(?!.*test_packaging\.TestRequirementParsing\.test_requirement_parsing.*)'

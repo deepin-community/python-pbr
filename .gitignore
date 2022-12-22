@@ -1,0 +1,40 @@
+# Compiled files
+*.py[co]
+*.a
+*.o
+*.so
+
+# Sphinx
+doc/source/reference/api/
+
+# Files created by releasenotes build
+releasenotes/build
+releasenotes/notes/reno.cache
+RELEASENOTES.rst
+
+# Packages/installer info
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Other
+.stestr/
+.tox
+.venv
+.*.swp
+.coverage
+cover
+AUTHORS
+ChangeLog
+
+# Editor files
+*~
+*.swp

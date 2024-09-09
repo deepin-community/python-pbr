@@ -52,9 +52,9 @@ Here's a similar package using *pbr*:
    [metadata]
    name = mypackage
    description = A short description
-   description-file = README.rst
+   description_file = README.rst
    author = John Doe
-   author-email = john.doe@example.com
+   author_email = john.doe@example.com
    license = BSD
 
 From this, we note a couple of the main features of *pbr*:
@@ -179,9 +179,9 @@ probably a good long_description. So we'll just inject the contents of your
 ``long_description``.
 
 You can also specify the exact file you want to use using the
-``description-file`` parameter.
+``description_file`` parameter.
 
-You can set the ``description-content-type`` to a MIME type that may
+You can set the ``description_content_type`` to a MIME type that may
 help rendering of the description; for example ``text/markdown`` or
 ``text/x-rst; charset=UTF-8``.
 
@@ -292,22 +292,10 @@ Setup Commands
 
    This feature has been superseded by the `sphinxcontrib-apidoc`__ (for
    generation of API documentation) and :ref:`pbr.sphinxext` (for configuration
-   of versioning via package metadata) extensions. It will be removed in a
-   future release.
+   of versioning via package metadata) extensions. It has been removed in
+   version 6.0.
 
    __ https://pypi.org/project/sphinxcontrib-apidoc/
-
-Sphinx can produce auto documentation indexes based on signatures and
-docstrings of your project but you have to give it index files to tell it to
-*autodoc* each module: that's kind of repetitive and boring. *pbr* will scan
-your project, find all of your modules, and generate all of the stub files for
-you.
-
-In addition, Sphinx documentation setups are altered to have several pieces of
-information that are known to ``setup.py`` injected into the Sphinx config.
-
-See the :ref:`pbr-setup-cfg` section of the configuration file for
-details on configuring your project for *autodoc*.
 
 ``test``
 ~~~~~~~~

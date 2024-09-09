@@ -19,10 +19,8 @@ Build-Depends-Indep:
  python3-coverage <!nocheck>,
  python3-fixtures <!nocheck>,
  python3-markupsafe <!nocheck>,
- python3-mock <!nocheck>,
  python3-openstackdocstheme <!nocheck>,
  python3-pip <!nocheck>,
- python3-six <!nocheck>,
  python3-sphinxcontrib.apidoc <!nodoc>,
  python3-stestr <!nocheck>,
  python3-testresources <!nocheck>,
@@ -77,7 +75,6 @@ Architecture: all
 Depends:
  python3-pkg-resources,
  python3-setuptools,
- python3-six,
  ${misc:Depends},
  ${python3:Depends},
 Recommends:

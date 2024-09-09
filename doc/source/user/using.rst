@@ -34,6 +34,24 @@ something like this::
    While one can pass any arguments supported by setuptools to ``setup()``,
    any conflicting arguments supplied in ``setup.cfg`` will take precedence.
 
+``pyproject.toml``
+------------------
+
+PBR can be configured as a PEP517 build-system in ``pyproject.toml``. This
+currently continues to rely on setuptools which means you need the above
+``setup.py`` file to be present. The main benefits to using a
+``pyproject.toml`` file with PBR are that you can control the versions of
+PBR and setuptools that are used avoiding easy_install invocation.
+Your build-system block in ``pyproject.toml`` will need to look something
+like this::
+
+    [build-system]
+    requires = ["pbr>=6.0.0", "setuptools>=64.0.0"]
+    build-backend = "pbr.build"
+
+Eventually PBR may grow its own direct support for PEP517 build hooks, but
+until then it will continue to need setuptools and ``setup.py``.
+
 .. _setup_cfg:
 
 ``setup.cfg``
@@ -49,11 +67,11 @@ versions of `setuptools`__. A simple sample can be found in *pbr*'s own
     [metadata]
     name = pbr
     author = OpenStack Foundation
-    author-email = openstack-discuss@lists.openstack.org
+    author_email = openstack-discuss@lists.openstack.org
     summary = OpenStack's setup automation in a reusable form
-    description-file = README.rst
-    description-content-type = text/x-rst; charset=UTF-8
-    home-page = https://launchpad.net/pbr
+    description_file = README.rst
+    description_content_type = text/x-rst; charset=UTF-8
+    home_page = https://launchpad.net/pbr
     project_urls =
         Bug Tracker = https://bugs.launchpad.net/pbr/
         Documentation = https://docs.openstack.org/pbr/
@@ -98,7 +116,6 @@ However, *pbr* does provide a number of additional sections:
 In addition, there are some modifications to other sections:
 
 - ``metadata``
-- ``build_sphinx``
 
 For all other sections, you should refer to either the `setuptools`_
 documentation or the documentation of the package that provides the section,
@@ -335,54 +352,8 @@ The ``pbr`` section controls *pbr*-specific options and behaviours.
 
    This feature has been superseded by the `sphinxcontrib-apidoc`_ (for
    generation of API documentation) and :ref:`pbr.sphinxext` (for configuration
-   of versioning via package metadata) extensions. It will be removed in a
-   future release.
-
-The ``build_sphinx`` section is a version of the ``build_sphinx`` *setuptools*
-plugin provided with Sphinx. This plugin extends the original plugin to add the
-following:
-
-- Automatic generation of module documentation using the ``sphinx-apidoc`` tool
-
-- Automatic configuration of the ``project``, ``version`` and ``release``
-  settings using information from *pbr* itself
-
-- Support for multiple builders using the ``builders`` configuration option
-
-  .. note::
-
-     Only applies to Sphinx < 1.6. See documentation on ``builders`` below.
-
-The version of ``build_sphinx`` provided by *pbr* provides a single additional
-option.
-
-``builders``
-  A comma separated list of builders to run. For example, to build both HTML
-  and man page documentation, you would define the following in your
-  ``setup.cfg``:
-
-  .. code-block:: ini
-
-      [build_sphinx]
-      builders = html,man
-      source-dir = doc/source
-      build-dir = doc/build
-      all-files = 1
-      warning-is-error = 1
-
-  .. deprecated:: 3.2.0
-
-     Sphinx 1.6+ adds support for specifying multiple builders in the default
-     ``builder`` option. You should use this option instead. Refer to the
-     `Sphinx documentation`_ for more information.
-
-For information on the remaining options, refer to the `Sphinx documentation`_.
-In addition, the ``autodoc_index_modules``, ``autodoc_tree_index_modules``,
-``autodoc_exclude_modules`` and ``autodoc_tree_excludes`` options :ref:`in the
-pbr section <pbr-setup-cfg>` will affect the output of the automatic module
-documentation generation.
-
-.. _Sphinx documentation: http://www.sphinx-doc.org/en/stable/setuptools.html
+   of versioning via package metadata) extensions. It has been removed in
+   version 6.0.
 
 Requirements
 ------------

@@ -1,3 +1,86 @@
+python-pbr (6.1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 28 Aug 2024 11:05:47 +0200
+
+python-pbr (6.0.0-2) unstable; urgency=medium
+
+  * Removed extreneous build-dep on python3-mock (Closes: #1072293).
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 02 Jun 2024 12:45:14 +0200
+
+python-pbr (6.0.0-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #1060153).
+  * Do not use six anymore.
+  * Removed patches applied upstream:
+    - Replace-imp-with-importlib.machinery.patch
+    - remove_sphinx_doc_building_integration.patch
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 20 Feb 2024 14:49:08 +0100
+
+python-pbr (5.11.1-5) unstable; urgency=medium
+
+  * Add Replace-imp-with-importlib.machinery.patch (Closes: #1058140).
+  * Cleans better.
+  * autopkgtest: blacklist TestPEP517Support.test_pep_517_support.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 12 Dec 2023 16:37:27 +0100
+
+python-pbr (5.11.1-4) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Backport upstream patch to remove Sphinx doc building integration
+    (closes: #1042668).
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 05 Nov 2023 18:45:18 +0100
+
+python-pbr (5.11.1-3) unstable; urgency=medium
+
+  * Cleans better (Closes: #1045383).
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 15 Aug 2023 11:29:34 +0200
+
+python-pbr (5.11.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 19 Jun 2023 11:15:25 +0200
+
+python-pbr (5.11.1-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 21 Feb 2023 14:30:07 +0100
+
+python-pbr (5.10.0-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+  * Blacklist test_wsgi_script_install() (no such file or directory).
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 22 Sep 2022 16:53:18 +0200
+
+python-pbr (5.10.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 30 Aug 2022 11:51:55 +0200
+
+python-pbr (5.8.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 24 Mar 2022 11:50:40 +0100
+
+python-pbr (5.8.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Better clean target.
+  * Blacklist test_pep_517_support() (not interesting for Debian anyways).
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 15 Feb 2022 15:46:07 +0100
+
 python-pbr (5.6.0-2) unstable; urgency=medium
 
   * Uploading to unstable.
